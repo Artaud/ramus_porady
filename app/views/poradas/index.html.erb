@@ -1,13 +1,10 @@
-<h1>Listing poradas</h1>
-
-
-<button type="button" class="btn btn-danger">Danger</button>
+<h1>porady vedení</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Číslo porady</th>
       <th>Datum</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -16,9 +13,10 @@
   <tbody>
     <% @poradas.each do |porada| %>
       <tr>
+        <td></td>
         <td><%= link_to porada.datum, porada, class: "" %></td>
-        <td><%= link_to 'Edit', edit_porada_path(porada) %></td>
-        <td><%= link_to 'Destroy', porada, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Upravit', edit_porada_path(porada), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Smazat', porada, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Porada', new_porada_path %>
+<%= link_to 'Vložit novou poradu', new_porada_path, :class => "btn btn-default" %>
