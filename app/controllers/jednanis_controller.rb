@@ -1,2 +1,0 @@
-class JednanisController < ApplicationController
-end
