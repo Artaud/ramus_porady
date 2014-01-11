@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datum:</strong>
+  <%= @porada.datum %>
+</p>
+
+
+<% @porada.reports.each do |report| %>
+<p>
+  <strong>Report:</strong>
+  <%= report.obsah %>
+</p>
+
+<% end %>
+
+<%= link_to "New report", new_report_path(params[@porada.id]) %>
+
+
+<%= link_to 'Edit', edit_porada_path(@porada) %> |
+<%= link_to 'Back', poradas_path %>

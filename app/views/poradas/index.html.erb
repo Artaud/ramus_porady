@@ -1,0 +1,29 @@
+<h1>Listing poradas</h1>
+
+
+<button type="button" class="btn btn-danger">Danger</button>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poradas.each do |porada| %>
+      <tr>
+        <td><%= link_to porada.datum, porada, class: "" %></td>
+        <td><%= link_to 'Edit', edit_porada_path(porada) %></td>
+        <td><%= link_to 'Destroy', porada, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Porada', new_porada_path %>
