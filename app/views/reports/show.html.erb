@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Porada:</strong>
+  <%= @report.porada_id %>
+</p>
+
+<p>
+  <strong>Obsah:</strong>
+  <%= @report.obsah %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>
