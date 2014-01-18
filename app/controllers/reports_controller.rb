@@ -15,6 +15,7 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    @porada_id = params[:porada_id]
   end
 
   # GET /reports/1/edit
@@ -69,6 +70,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:porada_id, :obsah)
+      params.require(:report).permit(:porada_id, :obsah, porada_attributes: [:id, :cislo])
     end
 end

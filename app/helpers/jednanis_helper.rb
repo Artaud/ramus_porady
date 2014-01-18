@@ -1,0 +1,2 @@
+module JednanisHelper
+end

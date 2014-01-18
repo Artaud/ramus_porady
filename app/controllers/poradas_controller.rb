@@ -69,6 +69,6 @@ class PoradasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def porada_params
-      params.require(:porada).permit(:datum)
+      params.require(:porada).permit(:datum, :cislo)
     end
 end

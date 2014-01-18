@@ -1,10 +1,10 @@
-<%= form_for(@report) do |f| %>
-  <% if @report.errors.any? %>
+<%= form_for(@jednani) do |f| %>
+  <% if @jednani.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+      <h2><%= pluralize(@jednani.errors.count, "error") %> prohibited this jednani from being saved:</h2>
 
       <ul>
-      <% @report.errors.full_messages.each do |msg| %>
+      <% @jednani.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -13,6 +13,10 @@
 
   <div class="field">
     <%= f.hidden_field :porada_id, :value => @porada_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tema %><br>
+    <%= f.text_field :tema %>
   </div>
   <div class="field">
     <%= f.label :obsah %><br>

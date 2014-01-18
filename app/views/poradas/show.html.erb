@@ -1,21 +1,51 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Datum:</strong>
-  <%= @porada.datum %>
+<p id="notice">
+	<%= notice %>
 </p>
 
+<div class="well well-lg">
+	<h1> <%= "PV " + @porada.datum.to_s %> </h1>
 
-<% @porada.reports.each do |report| %>
-<p>
-  <strong>Report:</strong>
-  <%= report.obsah %>
-</p>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">Reporty</h2>
+		</div>
+		<div class="panel-body">
 
-<% end %>
+			<% @porada.reports.each do |report| %>
 
-<%= link_to "New report", new_report_path(params[@porada.id]) %>
+			<ul class="list-group">
+				<!--><li class="list-group-item courier"><strong><%= FUNKCE %></li></strong><!-->
+				<li class="list-group-item"><%= report.obsah %></li>
+			</ul>
+			
+			<% end %>
+		</div>
+	</div>
 
 
-<%= link_to 'Edit', edit_porada_path(@porada) %> |
-<%= link_to 'Back', poradas_path %>
+	
+		<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">Jednání</h2>
+		</div>
+		<div class="panel-body">
+
+			<% @porada.jednanis.each do |jednani| %>
+
+			<ul class="list-group">
+				<li class="list-group-item courier"><strong><%= jednani.tema %></li></strong>
+				<li class="list-group-item"><%= jednani.obsah %></li>
+			</ul>
+
+			<% end %>
+		</div>
+	</div>
+
+	<%= link_to "Vložit nový report", new_report_path(porada_id: @porada.id), :class => "btn btn-primary" %>
+
+	<%= link_to "Vložit nové jednání", new_jednani_path(porada_id: @porada.id), :class => "btn btn-primary" %>
+
+	<%= link_to 'Upravit poradu', edit_porada_path(@porada), :class => "btn btn-default" %> |
+	<%= link_to 'Zpět', poradas_path, :class => "btn btn-default" %>
+
+</div>

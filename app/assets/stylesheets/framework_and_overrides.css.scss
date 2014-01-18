@@ -6,10 +6,19 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+  
+.navbar {
+  background-color: #625;
+}
+  
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
   font-family: courier;
+  color: white;
+    &:visited {
+      color: white;
+    }
   }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY

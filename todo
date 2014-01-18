@@ -1,0 +1,9 @@
+# add model & controller Funkce jmeno:string prijmeni:string nazev_funkce:string
+#	/ funkce 1 : M report, anaf report
+#	/ funkce 1 : M ukol, anaf ukol
+	add strong params
+	
+# add model & controller Ukol funkce_id:integer porada_id:integer
+#	/ ukol M : 1 porada
+#	/ ukol M : 1 funkce
+	add strong params

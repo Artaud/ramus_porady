@@ -1,0 +1,31 @@
+<h1>Listing funkces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jmeno</th>
+      <th>Prijmeni</th>
+      <th>Nazev funkce</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funkces.each do |funkce| %>
+      <tr>
+        <td><%= funkce.jmeno %></td>
+        <td><%= funkce.prijmeni %></td>
+        <td><%= funkce.nazev_funkce %></td>
+        <td><%= link_to 'Show', funkce %></td>
+        <td><%= link_to 'Edit', edit_funkce_path(funkce) %></td>
+        <td><%= link_to 'Destroy', funkce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Funkce', new_funkce_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Porada:</strong>
+  <%= @jednani.porada_id %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @jednani.tema %>
+</p>
+
+<p>
+  <strong>Obsah:</strong>
+  <%= @jednani.obsah %>
+</p>
+
+<%= link_to 'Edit', edit_jednani_path(@jednani) %> |
+<%= link_to 'Back', jednanis_path %>

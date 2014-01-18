@@ -11,16 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108065655) do
+ActiveRecord::Schema.define(version: 20140113214045) do
+
+  create_table "funkces", force: true do |t|
+    t.string   "jmeno"
+    t.string   "prijmeni"
+    t.string   "nazev_funkce"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jednanis", force: true do |t|
+    t.integer  "porada_id"
+    t.string   "tema"
+    t.text     "obsah"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "poradas", force: true do |t|
     t.date     "datum"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cislo"
   end
 
   create_table "reports", force: true do |t|
     t.integer  "porada_id"
+    t.text     "obsah"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ukols", force: true do |t|
+    t.integer  "funkce_id"
+    t.integer  "porada_id"
+    t.boolean  "splneno"
+    t.date     "deadline"
     t.text     "obsah"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,4 +1,10 @@
 RamusPorady::Application.routes.draw do
+  resources :ukols
+
+  resources :funkces
+
+  resources :jednanis
+
   resources :reports
 
   resources :poradas

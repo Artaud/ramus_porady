@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Funkce:</strong>
+  <%= @ukol.funkce_id %>
+</p>
+
+<p>
+  <strong>Porada:</strong>
+  <%= @ukol.porada_id %>
+</p>
+
+<p>
+  <strong>Splneno:</strong>
+  <%= @ukol.splneno %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @ukol.deadline %>
+</p>
+
+<p>
+  <strong>Obsah:</strong>
+  <%= @ukol.obsah %>
+</p>
+
+<%= link_to 'Edit', edit_ukol_path(@ukol) %> |
+<%= link_to 'Back', ukols_path %>

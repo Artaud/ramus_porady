@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jmeno:</strong>
+  <%= @funkce.jmeno %>
+</p>
+
+<p>
+  <strong>Prijmeni:</strong>
+  <%= @funkce.prijmeni %>
+</p>
+
+<p>
+  <strong>Nazev funkce:</strong>
+  <%= @funkce.nazev_funkce %>
+</p>
+
+<%= link_to 'Edit', edit_funkce_path(@funkce) %> |
+<%= link_to 'Back', funkces_path %>

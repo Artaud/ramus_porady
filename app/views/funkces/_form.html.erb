@@ -1,0 +1,29 @@
+<%= form_for(@funkce) do |f| %>
+  <% if @funkce.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@funkce.errors.count, "error") %> prohibited this funkce from being saved:</h2>
+
+      <ul>
+      <% @funkce.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :jmeno %><br>
+    <%= f.text_field :jmeno %>
+  </div>
+  <div class="field">
+    <%= f.label :prijmeni %><br>
+    <%= f.text_field :prijmeni %>
+  </div>
+  <div class="field">
+    <%= f.label :nazev_funkce %><br>
+    <%= f.text_field :nazev_funkce %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

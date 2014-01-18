@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jmeno: MyString
+  prijmeni: MyString
+  nazev_funkce: MyString
+
+two:
+  jmeno: MyString
+  prijmeni: MyString
+  nazev_funkce: MyString

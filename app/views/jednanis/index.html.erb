@@ -1,0 +1,31 @@
+<h1>Listing jednanis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Porada</th>
+      <th>Tema</th>
+      <th>Obsah</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jednanis.each do |jednani| %>
+      <tr>
+        <td><%= jednani.porada_id %></td>
+        <td><%= jednani.tema %></td>
+        <td><%= jednani.obsah %></td>
+        <td><%= link_to 'Show', jednani %></td>
+        <td><%= link_to 'Edit', edit_jednani_path(jednani) %></td>
+        <td><%= link_to 'Destroy', jednani, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jednani', new_jednani_path %>

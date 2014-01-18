@@ -1,27 +1,29 @@
 <h1>porady vedení</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Číslo porady</th>
-      <th>Datum</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="well well-lg" id="main_well">
+	<table class="table table-condensed" id="main_table">
+		<thead>
+			<tr>
+				<th>Číslo porady a datum</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
 
-  <tbody>
-    <% @poradas.each do |porada| %>
-      <tr>
-        <td></td>
-        <td><%= link_to porada.datum, porada, class: "" %></td>
-        <td><%= link_to 'Upravit', edit_porada_path(porada), :class => "btn btn-default" %></td>
-        <td><%= link_to 'Smazat', porada, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+		<tbody>
+			<% @poradas.each do |porada| %>
+
+			<tr>
+				<td><%= link_to porada.cislo.to_s + " // " + porada.datum.to_s, porada, class: "btn btn-default" %></td>
+				<td><%= link_to 'Upravit', edit_porada_path(porada), :class => "btn btn-default" %>
+					<%= link_to 'Smazat', porada, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+
+			<% end %>
+		</tbody>
+	</table>
+</div>
 
 <br>
 
-<%= link_to 'Vložit novou poradu', new_porada_path, :class => "btn btn-default" %>
+<%= link_to 'Vložit novou poradu', new_porada_path, :class => "btn btn-primary" %>
