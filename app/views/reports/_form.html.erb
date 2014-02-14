@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+
+
+  <div class="field">
+    <%= f.select(:funkce_id, Funkce.all.collect {|p| [p.nazev_funkce, p.id]}) %>
+  </div>
   <div class="field">
     <%= f.hidden_field :porada_id, :value => @porada_id %>
   </div>

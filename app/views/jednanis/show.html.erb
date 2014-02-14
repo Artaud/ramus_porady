@@ -15,5 +15,5 @@
   <%= @jednani.obsah %>
 </p>
 
-<%= link_to 'Edit', edit_jednani_path(@jednani) %> |
-<%= link_to 'Back', jednanis_path %>
+<%= link_to 'Upravit', edit_jednani_path(@jednani) %> |
+<%= link_to 'Back', porada_path(@jednani.porada_id) %>

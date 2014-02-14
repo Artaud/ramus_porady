@@ -3,7 +3,7 @@
 </p>
 
 <div class="well well-lg">
-	<h1> <%= "PV " + @porada.datum.to_s %> </h1>
+	<h1> <%= "PV_" + @porada.cislo.to_s + " / " + @porada.datum.to_s %> </h1>
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -14,7 +14,7 @@
 			<% @porada.reports.each do |report| %>
 
 			<ul class="list-group">
-				<!--><li class="list-group-item courier"><strong><%= FUNKCE %></li></strong><!-->
+				<li class="list-group-item courier"><strong><%= Funkce.find(report.funkce_id).nazev_funkce %></li></strong>
 				<li class="list-group-item"><%= report.obsah %></li>
 			</ul>
 			
@@ -31,6 +31,8 @@
 		<div class="panel-body">
 
 			<% @porada.jednanis.each do |jednani| %>
+
+<!--<%= link_to 'Edit', edit_jednani_path(@jednani) %>-->
 
 			<ul class="list-group">
 				<li class="list-group-item courier"><strong><%= jednani.tema %></li></strong>

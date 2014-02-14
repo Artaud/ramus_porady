@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113214045) do
+ActiveRecord::Schema.define(version: 20140118131622) do
 
   create_table "funkces", force: true do |t|
     t.string   "jmeno"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140113214045) do
     t.text     "obsah"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "funkce_id"
   end
 
   create_table "ukols", force: true do |t|
